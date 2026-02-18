@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
         :root {
             --bg-color: #d1d1d1;
@@ -35,7 +37,7 @@
             overflow: hidden;
         }
 
-        /* Header & Footer */
+        /* Layout Framework */
         .navbar, .footer {
             display: flex;
             justify-content: space-between;
@@ -88,7 +90,7 @@
             text-decoration: none;
         }
 
-        /* Main Content Grid */
+        /* Content Grid */
         .content-grid {
             flex: 1;
             display: grid;
@@ -98,11 +100,6 @@
             max-width: 1300px;
             margin: 0 auto;
             width: 100%;
-        }
-
-        .image-col {
-            display: flex;
-            justify-content: flex-start;
         }
 
         .main-img {
@@ -130,13 +127,6 @@
             letter-spacing: -0.5px;
         }
 
-        .text-col {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-        }
-
         .text-col p {
             line-height: 1.6;
             font-size: 15px;
@@ -145,6 +135,28 @@
             margin-bottom: 15px;
             text-align: justify;
             text-justify: inter-word;
+        }
+
+        /* Social Buttons Styling */
+        .social-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .social-links a {
+            color: var(--text-main);
+            font-size: 20px;
+            transition: color 0.2s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
         }
 
         .location {
@@ -163,12 +175,9 @@
                 padding: 60px 0;
             }
             .text-col p { text-align: center; }
-            .text-col, .image-col { 
-                justify-content: center; 
-                align-items: center;
-            }
+            .social-links { position: relative; left: 0; transform: none; margin: 20px 0; }
+            .footer { flex-direction: column; gap: 15px; text-align: center; }
             .title-col h1 { font-size: 3.5rem; }
-            .footer { margin-top: 40px; padding-bottom: 20px; }
         }
     </style>
 </head>
@@ -182,8 +191,8 @@
         <nav class="nav-links">
             <a href="#">home</a>
             <a href="#">about</a>
-            <a href="#">gallery</a>
-            <a href="#" class="contact-btn">Contact</a>
+            <a href="https://vsco.co/rellskurt/gallery" target="_blank">gallery</a>
+            <a href="mailto:your@email.com" class="contact-btn">Contact</a>
         </nav>
     </header>
 
@@ -209,6 +218,16 @@
 
     <footer class="footer">
         <div class="copyright">© rellskurt 2026</div>
+
+        <div class="social-links">
+            <a href="https://instagram.com/rellskurt" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com/in/anandafarrell" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+
         <div id="france-time" class="location">loading time...</div>
     </footer>
 
