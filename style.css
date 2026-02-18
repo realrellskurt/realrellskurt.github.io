@@ -1,0 +1,94 @@
+:root {
+    --bg-color: #d1d1d1; /* Light grey/taupe background */
+    --accent-color: #bc6c5a; /* Clay/red color from the button/logo */
+    --text-main: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Inter', sans-serif; /* A clean sans-serif */
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+/* Header & Footer */
+.navbar, .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-swatch {
+    width: 25px;
+    height: 25px;
+    background-color: var(--accent-color);
+    border-radius: 6px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.contact-btn {
+    background-color: var(--accent-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 12px;
+}
+
+/* Main Content Grid */
+.content-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.main-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 20px; /* Essential for the look */
+}
+
+.title-col h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.text-col p {
+    line-height: 1.6;
+    font-size: 15px;
+    max-width: 350px;
+}
