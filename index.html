@@ -96,7 +96,6 @@
             width: 420px;
             height: 520px;
             cursor: pointer;
-            /* Ensures images don't overflow the rounded look */
             border-radius: 24px; 
         }
 
@@ -106,21 +105,17 @@
             height: 100%;
             border-radius: 24px;
             object-fit: cover;
-            /* Smooth glide animation */
             transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            /* Prevent image dragging from interfering with click */
             user-select: none;
             pointer-events: none;
         }
 
-        /* Dynamic Offset for back cards */
         .stack-img:nth-child(1) { z-index: 4; transform: translate(0, 0); }
         .stack-img:nth-child(2) { z-index: 3; transform: translate(15px, 15px); }
         .stack-img:nth-child(3) { z-index: 2; transform: translate(30px, 30px); }
         .stack-img:nth-child(4) { z-index: 1; transform: translate(45px, 45px); }
 
-        /* Animation when a card is being moved to the back */
         .stack-img.moving-back {
             transform: translate(-100px, -20px) rotate(-5deg) scale(0.9) !important;
             opacity: 0;
@@ -158,6 +153,8 @@
 </head>
 <body>
 
+    <audio id="flipSound" src="flip.mp3" preload="auto"></audio>
+
     <header class="navbar">
         <div class="logo-area">
             <div class="color-swatch"></div>
@@ -193,7 +190,7 @@
     </main>
 
     <footer class="footer">
-        <div class="copyright">copyright © 2026 rellskurt</div>
+        <div class="copyright">© rellskurt 2026</div>
         <div class="social-links">
             <a href="https://instagram.com/rellskurt" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://linkedin.com/in/anandafarrell" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -206,6 +203,12 @@
             const stack = document.getElementById('galleryStack');
             const cards = stack.getElementsByClassName('stack-img');
             const topCard = cards[0];
+            const sound = document.getElementById('flipSound');
+
+            // Play sound effect
+            // Reset time to 0 so it plays instantly if clicked rapidly
+            sound.currentTime = 0;
+            sound.play();
 
             // 1. Throw top card to the side/back
             topCard.classList.add('moving-back');
@@ -231,4 +234,3 @@
     </script>
 </body>
 </html>
-
